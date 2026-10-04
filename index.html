@@ -10,7 +10,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#top"><span class="brand-mark">∑</span><span>Учебная мастерская<small>ЕГЭ · информатика</small></span></a>
-    <nav class="nav"><a href="#practice" class="nav-link active" data-view="practice">Практика</a><a href="#progress" class="nav-link" data-view="progress">Прогресс</a><span class="nav-link">Тренажёр · 2027</span></nav>
+    <nav class="nav"><a href="#practice" class="nav-link active" data-view="practice">Практика</a><a href="#exam" class="nav-link" data-view="exam">Экзамен</a><a href="#progress" class="nav-link" data-view="progress">Прогресс</a><span class="nav-link">Тренажёр · 2027</span></nav>
     <button id="mode-toggle" class="mode-toggle" type="button" aria-label="Переключить режим">Режим ученицы</button>
   </header>
   <main id="top">
@@ -27,7 +27,13 @@
     <section id="progress-view" class="view hidden">
       <div class="section-head" id="progress"><div><p class="eyebrow">ОБЗОР УЧЁБЫ</p><h2>Что уже получается</h2></div><div class="export-actions"><button class="button secondary" id="export-btn">Скачать отчёт</button><label class="button secondary file-button">Загрузить отчёт<input id="import-file" type="file" accept="application/json" hidden></label><button class="button quiet" id="reset-btn">Сбросить прогресс</button></div></div>
       <div class="progress-grid"><section class="panel"><h3>По разделам</h3><div id="topic-progress" class="topic-progress"></div></section><section class="panel"><h3>Что повторить</h3><div id="review-list" class="review-list"></div></section></div>
+      <section class="panel exam-progress-panel"><h3>Последний экзамен</h3><div id="exam-progress-summary"></div></section>
       <section class="panel teacher-observation"><p class="eyebrow">НА СЛЕДУЮЩЕЕ ЗАНЯТИЕ</p><h3>Наблюдения преподавателя</h3><p>Откройте любой номер и оставьте заметку: где ученица запнулась, что объяснила своими словами, какой пример дать в следующий раз.</p><label class="field-label" for="lesson-note">Заметка по занятию</label><textarea id="lesson-note" rows="4" placeholder="Например: в №8 путает сочетания и размещения; попросить сначала определить, важен ли порядок."></textarea><button id="save-note" class="button primary">Сохранить заметку</button><span id="note-saved" class="saved-hint" aria-live="polite"></span></section>
+    </section>
+    <section id="exam-view" class="view hidden">
+      <div id="exam-intro" class="exam-intro"><p class="eyebrow">ПРОВЕРЬ СЕБЯ</p><h2>Режим экзамена</h2><p>Отвечай без подсказок. Вводи ответ так, как его можно вписать в бланк. Если ошибёшься, в экзаменационную очередь добавятся две новые задачи по этой теме.</p><button id="start-exam" class="button primary">Начать экзамен · 27 заданий</button><button id="resume-exam" class="button secondary hidden">Продолжить</button></div>
+      <div id="exam-active" class="exam-active hidden"><div class="exam-progress-head"><span id="exam-counter">Задание 1</span><span id="exam-score">Верно: 0 · Ошибок: 0</span></div><div class="progress-track exam-track"><i id="exam-bar"></i></div><article id="exam-panel" class="task-panel"></article></div>
+      <div id="exam-result" class="panel exam-result hidden"></div>
     </section>
     <footer><span>Сделано для занятий один на один</span><span>Прогресс сохраняется в этом браузере</span><span>Методичка преподавателя — отдельным файлом</span></footer>
   </main>
