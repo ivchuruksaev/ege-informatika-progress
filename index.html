@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>Информатика ЕГЭ · Практика и прогресс</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">∑</span><span>Учебная мастерская<small>ЕГЭ · информатика</small></span></a>
+    <nav class="nav"><a href="#practice" class="nav-link active" data-view="practice">Практика</a><a href="#progress" class="nav-link" data-view="progress">Прогресс</a><span class="nav-link">Тренажёр · 2027</span></nav>
+    <button id="mode-toggle" class="mode-toggle" type="button" aria-label="Переключить режим">Режим ученицы</button>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">ТРЕНАЖЁР · ВЕРСИЯ 2027</p><h1>Понимаем задачу.<br><em>Находим решение.</em></h1><p>27 коротких практик, отслеживание самостоятельности и заметки для следующего занятия.</p><a class="text-link" href="#practice">Начать с задания <span>↓</span></a></div>
+      <div class="hero-card"><div class="hero-card-head"><span>ВАШ РИТМ</span><span id="hero-date"></span></div><div class="hero-number"><span id="hero-done">0</span><small>из 27<br>разобрано</small></div><div class="progress-track"><i id="hero-bar"></i></div><div class="hero-card-foot"><span id="hero-independent">0 уверенно</span><span id="hero-needs">0 повторить</span></div></div>
+    </section>
+    <section class="stats" aria-label="Общий прогресс"><div><span class="stat-label">Заданий просмотрено</span><strong id="stat-viewed">0 <small>/ 27</small></strong></div><div><span class="stat-label">Решено верно</span><strong id="stat-correct">0</strong></div><div><span class="stat-label">Уверенно самостоятельно</span><strong id="stat-independent">0</strong></div><div><span class="stat-label">Нужны повторы</span><strong id="stat-review">0</strong></div></section>
+    <section id="practice-view" class="view">
+      <div class="section-head" id="practice"><div><p class="eyebrow">СЕГОДНЯШНЯЯ ПРАКТИКА</p><h2>Выберите номер</h2></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Найти тему или номер" aria-label="Найти задание"></label></div>
+      <div id="filters" class="filters" aria-label="Фильтр по разделам"></div>
+      <div class="practice-layout"><div id="task-list" class="task-list" aria-label="Список заданий"></div><article id="task-panel" class="task-panel" aria-live="polite"></article></div>
+    </section>
+    <section id="progress-view" class="view hidden">
+      <div class="section-head" id="progress"><div><p class="eyebrow">ОБЗОР УЧЁБЫ</p><h2>Что уже получается</h2></div><div class="export-actions"><button class="button secondary" id="export-btn">Скачать отчёт</button><label class="button secondary file-button">Загрузить отчёт<input id="import-file" type="file" accept="application/json" hidden></label><button class="button quiet" id="reset-btn">Сбросить прогресс</button></div></div>
+      <div class="progress-grid"><section class="panel"><h3>По разделам</h3><div id="topic-progress" class="topic-progress"></div></section><section class="panel"><h3>Что повторить</h3><div id="review-list" class="review-list"></div></section></div>
+      <section class="panel teacher-observation"><p class="eyebrow">НА СЛЕДУЮЩЕЕ ЗАНЯТИЕ</p><h3>Наблюдения преподавателя</h3><p>Откройте любой номер и оставьте заметку: где ученица запнулась, что объяснила своими словами, какой пример дать в следующий раз.</p><label class="field-label" for="lesson-note">Заметка по занятию</label><textarea id="lesson-note" rows="4" placeholder="Например: в №8 путает сочетания и размещения; попросить сначала определить, важен ли порядок."></textarea><button id="save-note" class="button primary">Сохранить заметку</button><span id="note-saved" class="saved-hint" aria-live="polite"></span></section>
+    </section>
+    <footer><span>Сделано для занятий один на один</span><span>Прогресс сохраняется в этом браузере</span><span>Методичка преподавателя — отдельным файлом</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
